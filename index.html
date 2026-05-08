@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Natura - Explore The World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="brand">
+            <img src="planet6.jpg" alt="Natura Icon" class="brand-logo">
+            <h2>Natura</h2>
+        </div>
+
+        <div class="nav-links">
+            <a href="#destinations" class="active">Destinations</a>
+            <a href="#tours">Tours</a>
+            <a href="#hotels">Hotels</a>
+            <a href="#food">Food & Dining</a>
+            <a href="#universities">Universities</a>
+            <a href="#forests">Forests</a>
+            <a href="#CarRide">Car Ride</a>
+        </div>
+
+
+        <div class="nav-actions" style="display: flex; gap: 0.8rem; align-items: center;">
+
+<!-- Realistic Support-Style AI Chat in Navbar -->
+
+            <div id="liveChatWidget" class="live-chat-wrap">
+                <!-- Floating Avatar Button -->
+                <button id="chatLauncherBtn" class="chat-launcher">
+                    <div class="launcher-icon default" style="width: 100%; height: 100%;">
+                        <img src="planet6.jpg" alt="AI Chat" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
+                    <div class="launcher-icon active" style="display:none;"><i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <span class="notification-badge" id="chatBadge">1</span>
+                </button>
+
+
+<!-- Main Chat Panel -->
+                <div id="chatPanel" class="chat-panel">
+
+                    <!-- Context Header -->
+                    <div class="chat-header">
+                        <div class="header-profile">
+                            <div class="agent-avatar">
+                                <img src="planet6.jpg"
+                                    alt="Lava Planet AI Logo" style="object-fit: cover;">
+                                <span class="online-indicator"></span>
+                            </div>
+                            <div class="agent-info">
+                                <h3>Nomad AI Support</h3>
+                                <p>Typically replies instantly</p>
+                            </div>
+                        </div>
+                        <button id="chatSettingsBtn" class="icon-btn-minimal" title="AI Settings"><i
+                                class="fa-solid fa-gear"></i></button>
+                    </div>
+
+<!-- View: Chat Conversation -->
+                    <div id="chatConversationView" class="chat-view active-view">
+                        <div class="chat-body" id="chatBody">
+                            <div class="message ai">
+                                <div class="message-content">
+                                    Hi there! 👋 Welcome to Nomad. I'm your realistic AI guide. How can I assist you
+                                    with your
+                                    trip today?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-footer">
+                            <form id="chatForm">
+                                <input type="text" id="chatInput" placeholder="Write a reply..." autocomplete="off">
+                                <button type="submit" id="sendChatBtn" class="send-action-btn" title="Send"><i
+                                        class="fa-solid fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+<!-- View: API Config Settings -->
+                    <div id="chatSettingsView" class="chat-view"
+                        style="display:none; padding: 1.5rem; background: #f8fafc; height: 100%;">
+                        <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); color: #111827;">AI
+                            Connection Mode
+                        </h3>
+                        <p style="font-size: 0.9rem; color: #4B5563; margin-bottom: 1.5rem;">For real-time intelligent
+                            responses, enter your Gemini API Key. Leave blank for default offline mode.</p>
+                        <form id="apiKeyForm">
+                            <label
+                                style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: #111827;">Gemini
+                                API Key</label>
+                            <input type="password" id="apiInput" placeholder="paste_api_key_here"
+                                style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 1rem; outline: none; font-family:var(--font-body); color: #111827; background: white;">
+                            <button type="submit" class="primary-btn"
+                                style="width: 100%; font-size: 0.95rem; padding: 0.8rem;">Save Settings</button>
+                        </form>
+                        <button id="backToChatBtn"
+                            style="width: 100%; padding: 0.8rem; background: transparent; border: none; color: #4B5563; margin-top: 0.5rem; cursor: pointer; font-weight: 500;">←
+                            Back to Chat</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="icon-btn" id="profileBtn" title="Profile"
+                style="padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary);">
+                <img src="planet3.jpg" alt="Profile"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </button>
+        </div>
+    </nav>
+
+
+
+
+<!-- Beautiful Hero Banner (Global Search) -->
+
+    <header class="hero-banner">
+        <div class="hero-content">
+            <h1 class="hero-title" style="position: relative; z-index: 10;">Journey Into The <br><span class="hero-highlight">Unknown</span></h1>
+            <p class="hero-subtitle" style="position: relative; z-index: 10;">Experience unparalleled luxury across Earth and the Cosmos.</p>
+
+            <div class="search-container"
+                style="display: flex; flex-direction: column; align-items: center; width: 100%; position: relative; z-index: 10;">
+                <div class="search-bar glass-panel"
+                    style="width: 100%; max-width: 750px; margin-bottom: 2rem; background: rgba(10, 23, 42, 0.7); box-shadow: var(--shadow-soft); padding: 0.5rem; border-radius: 60px;">
+                    <i class="fa-solid fa-location-dot" style="font-size: 1.5rem; margin: 0 1rem;"></i>
+                    <input type="text" id="destinationSearch" placeholder="kaha chlega jaldi bolo.. "
+                        style="font-size: 1.2rem;">
+                    <button id="searchBtn" class="primary-btn"
+                        style="padding: 1.2rem 2.5rem; font-size: 1.15rem; border-radius: 50px;">Search</button>
+                </div>
+
+ <!-- Quick Filter Options -->
+                <div class="shortcut-options"
+                    style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+
+                    <button id="forestShortcutBtn" class="glass-panel"
+                        style="padding: 0.8rem 1.6rem; border-radius: 40px; color: var(--text-main); font-family: var(--font-body); cursor: pointer; background: rgba(16, 185, 129, 0.15); transition: var(--transition); font-weight: 600; font-size: 1.05rem;">
+                        <i class="fa-solid fa-tree" style="color: #53f49e5f; margin-right: 8px;"></i> Nature calling
+                    </button>
+
+                    <button id="uniShortcutBtn" class="glass-panel"
+                        style="padding: 0.8rem 1.6rem; border-radius: 40px; color: var(--text-main); font-family: var(--font-body); cursor: pointer; background: rgba(59, 130, 246, 0.15); transition: var(--transition); font-weight: 600; font-size: 1.05rem;">
+                        <i class="fa-solid fa-graduation-cap" style="color: #3b78da; margin-right: 8px;"></i> Top
+                        Universities
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content (Destinations) -->
+    <main id="destinations">
+
+        <div class="destinations-section" style="padding-top: 4rem;">
+
+            <div class="section-header">
+                <h2>Featured Destinations</h2>
+                <p>Hand-picked locations for an unforgettable experience.</p>
+            </div>
+
+            <div class="destinations-grid" id="destinationsGrid">
+
+
+
+<!-- Card: Mahagama Ganga Sagar View a -->
+
+                <div class="destination-card"
+                    data-location="mahagama ganga sagar india asia nature forest river water scenery">
+                    <div class="card-image">
+                        <img src="b33.jpg" alt="Mahagama Ganga Sagar ">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category" style="color: var(--secondary);">India</span>
+                        <h3>Ganga Sagar mahagama</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Immerse yourself in serene forest paths and majestic water views deep in nature.</p>
+                        <p class="price">From <strong>$29</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+<!-- Card: Mahagama Ganga Sagar View b -->
+                <div class="destination-card"
+                    data-location="mahagama ganga sagar india asia nature forest river water scenery">
+                    <div class="card-image">
+                        <img src="b34.jpg" alt="Mahagama Ganga Sagar ">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category" style="color: var(--secondary);">India</span>
+                        <h3>Ganga Sagar mahagama</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Immerse yourself in serene forest paths and majestic water views deep in nature.</p>
+                        <p class="price">From <strong>$29</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+<!-- Card: Mahagama Ganga Sagar View c -->
+                <div class="destination-card"
+                    data-location="mahagama ganga sagar india asia nature forest river water scenery">
+                    <div class="card-image">
+                        <img src="t6.jpg" alt=" shimda pahad mahagama">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category" style="color: var(--secondary);">India</span>
+                        <h3>shimda pahad mahagama</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Immerse yourself in serene forest paths and majestic water views deep in nature.</p>
+                        <p class="price">From <strong>$29</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+
+<!-- Card: Mahagama Ganga Sagar -->
+                <div class="destination-card" data-location="mahagama ganga sagar india asia nature forest river water">
+
+                    <div class="card-image">
+                        <img src="park2.jpg" alt="Mahagama Ganga Sagar (View 1)">
+
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="category" style="color: var(--secondary);">India</span>
+                        <h3>ECO park urjanagar</h3>
+                        <p class="price">From <strong>$29</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card: Mahagama Ganga Sagar View 2 -->
+                <div class="destination-card"
+                    data-location="mahagama ganga sagar india asia nature forest river water viewpoint">
+                    <div class="card-image">
+                        <img src="sun.jpg" alt="Mahagama Ganga Sagar (View 2)">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category" style="color: var(--secondary);">India</span>
+                        <h3>ECO park urjanagar</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Experience breathtaking river viewpoints and tranquil natural surroundings in Mahagama.</p>
+                        <p class="price">From <strong>$29</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card: Mahagama Ganga Sagar View 3 -->
+                <div class="destination-card"
+                    data-location="mahagama ganga sagar india asia nature forest river water scenery">
+                    <div class="card-image">
+                        <img src="dark.jpg" alt="Mahagama Ganga Sagar (View 3)">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category" style="color: var(--secondary);">India</span>
+                        <h3>mela maidan urjanagar</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Immerse yourself in serene forest paths and majestic water views deep in nature.</p>
+                        <p class="price">From <strong>$29</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card: Mahagama Ganga Sagar View 4 -->
+                <div class="destination-card"
+                    data-location="americ ganga sagar india asia nature forest river water landscape">
+                    <div class="card-image">
+                        <img src="america.png" alt="Mahagama Ganga Sagar (View 4)">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category" style="color: var(--secondary);">India</span>
+                        <h3>America</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Discover hidden landscapes and crystal clear river reflections away from the city.</p>
+                        <p class="price">From <strong>$29</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- down town -->
+ <!-- Card 5 -->
+                <div class="destination-card" data-location="santorini greece europe beach">
+                    <div class="card-image">
+                        <img src="Greece.png" alt="Santorini, Greece">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Europe</span>
+                        <h3>Santorini, Greece</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Witness stunning sunsets over the Aegean sea, iconic whitewashed houses, and vibrant blue
+                            domes.</p>
+                        <p class="price">From <strong>$1,200</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+<!-- Card 6 -->
+                <div class="destination-card" data-location="kyoto japan asia temple spring">
+                    <div class="card-image">
+                        <img src="kyoto.png" alt="Kyoto, Japan">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Asia</span>
+                        <h3>Kyoto, Japan</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Step back in time to explore classical Buddhist temples, gardens, imperial palaces and
+                            traditional wooden houses.</p>
+                        <p class="price">From <strong>$850</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+<!-- Card 7 -->
+                <div class="destination-card" data-location="new york usa america city urban">
+                    <div class="card-image">
+                        <img src="new_york.png" alt="New York, USA">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">North America</span>
+                        <h3>New York City, USA</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Feel the energy of the city that never sleeps, featuring iconic skyscrapers, Times Square,
+                            and Central Park.</p>
+                        <p class="price">From <strong>$950</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+    <!-- Card 8 -->
+                <div class="destination-card" data-location="paris france europe city">
+                    <div class="card-image">
+                        <img src="paris_1775151852598.png" alt="Paris, France">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Europe</span>
+                        <h3>Paris, France</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Fall in love with the City of Light, home to the Eiffel Tower, Louvre museum, and charming
+                            sidewalk cafes.</p>
+                        <p class="price">From <strong>$1,100</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+    <!-- Card 9 -->
+                <div class="destination-card" data-location="bali indonesia asia beach tropical">
+                    <div class="card-image">
+                        <img src="bali_1775151869624.png" alt="Bali, Indonesia">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Asia</span>
+                        <h3>Bali, Indonesia</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Relax on tropical beaches, explore lush rice terraces, and experience unique vibrant
+                            cultural traditions.</p>
+                        <p class="price">From <strong>$750</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+<!-- Card 10 -->
+                <div class="destination-card" data-location="cape town south africa mountain coastal">
+                    <div class="card-image">
+                        <img src="cape_town_1775151888404.png" alt="Cape Town, South Africa">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Africa</span>
+                        <h3>Cape Town, South Africa</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Discover a sweeping coastal paradise watched over by the magnificent Table Mountain and
+                            breathtaking cliffs.</p>
+                        <p class="price">From <strong>$1,050</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+<!-- Card 11 -->
+                <div class="destination-card" data-location="rome italy europe city history ancient">
+                    <div class="card-image">
+                        <img src="rome.png" alt="Rome, Italy">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Europe</span>
+                        <h3>Rome, Italy</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Wander through nearly 3,000 years of globally influential art, architecture and ancient
+                            ruins on display.</p>
+                        <p class="price">From <strong>$1,150</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card 12 -->
+                <div class="destination-card" data-location="machu picchu peru south america mountains inca">
+                    <div class="card-image">
+                        <img src="machu_picchu.png" alt="Machu Picchu, Peru">
+                        <div class="rating"><i class="fa-solid fa-star"> </i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">South America</span>
+                        <h3>Machu Picchu, Peru</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Hike through breathtaking Andean mountain scenery to discover the lost city of the Incas.
+                        </p>
+                        <p class="price">From <strong>$900</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card 13 -->
+                <div class="destination-card" data-location="dubai uae middle east modern luxury desert">
+                    <div class="card-image">
+                        <img src="dubai.png" alt="Dubai, UAE">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Middle East</span>
+                        <h3>Dubai, UAE</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Experience ultra-modern architecture, luxury shopping, and lively nightlife in this desert
+                            oasis.</p>
+                        <p class="price">From <strong>$1,500</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+     <!-- Card 14 -->
+                <div class="destination-card" data-location="sydney australia opera house harbor">
+                    <div class="card-image">
+                        <img src="sydney.png" alt="Sydney, Australia">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Oceania</span>
+                        <h3>Sydney, Australia</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Sail past the iconic Opera House and relax on the beautiful golden sands of Bondi Beach.</p>
+                        <p class="price">From <strong>$1,250</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card 15 -->
+                <div class="destination-card" data-location="banff canada north america mountains nature lake">
+                    <div class="card-image">
+                        <img src="a33.png" alt="Banff, Canada">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">North America</span>
+                        <h3>Banff, Canada</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Marvel at the majestic Rocky Mountains and the stunning turquoise waters of Lake Louise.</p>
+                        <p class="price">From <strong>$800</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card 16 -->
+                <div class="destination-card" data-location="maldives asia island tropical ocean beach luxury">
+                    <div class="card-image">
+                        <img src="maldives.png" alt="Maldives">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Asia</span>
+                        <h3>Maldives</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Unwind in a luxurious overwater bungalow surrounded by crystal clear waters and vibrant
+                            coral reefs.</p>
+                        <p class="price">From <strong>$2,200</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+
+ <!-- Card 18 -->
+                <div class="destination-card" data-location=" brazil south america nature forest">
+                    <div class="card-image">
+                        <img src="https://as2.ftcdn.net/jpg/02/78/13/67/1000_F_278136770_gtY679gEBnbKWhEjX40n7XmoMxcEt76P.webp"
+                            alt="">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category" style="color: #10B981;">South America</span>
+                        <h3>Amazon Rainforest</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Explore the lungs of the Earth, featuring unmatched biodiversity and deep jungle
+                            expeditions.</p>
+                        <p class="price">From <strong>$1,100</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card 19 -->
+                <div class="destination-card" data-location="seoul south korea asia city lights urban">
+                    <div class="card-image">
+                        <img src="Korea.png" alt="Seoul, South Korea">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Asia</span>
+                        <h3>Seoul, South Korea</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Dive into a bustling metropolis where pop culture meets traditional temples and night
+                            markets.</p>
+                        <p class="price">From <strong>$820</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+     <!-- Card 20 -->
+                <div class="destination-card" data-location="rio de janeiro brazil south america beach statue">
+                    <div class="card-image">
+                        <img src="Brazil.png" alt="Rio de Janeiro, Brazil">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">South America</span>
+                        <h3>Rio de Janeiro, Brazil</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Feel the rhythm of Copacabana and view the city from beneath the iconic Christ the Redeemer.
+                        </p>
+                        <p class="price">From <strong>$780</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card 21 -->
+                <div class="destination-card" data-location="swiss alps switzerland europe snow mountains">
+                    <div class="card-image">
+                        <img src="Switzerland.png" alt="Swiss Alps, Switzerland">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Europe</span>
+                        <h3>Swiss Alps, Switzerland</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Experience world-class skiing, pristine snow-capped peaks, and cozy alpine villages.</p>
+                        <p class="price">From <strong>$1,350</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+ <!-- Card 22 -->
+                <div class="destination-card" data-location="amalfi coast italy europe ocean villa">
+                    <div class="card-image">
+                        <img src="Italy.png" alt="Amalfi Coast, Italy">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Europe</span>
+                        <h3>Amalfi Coast, Italy</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Drive along dramatic coastlines and stay in colorful cliffside villages overlooking the
+                            Mediterranean.</p>
+                        <p class="price">From <strong>$1,450</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+
+ <!-- Card 23 -->
+                <div class="destination-card" data-location="marrakech morocco africa desert market">
+                    <div class="card-image">
+                        <img src="Morocco.png" alt="Marrakech, Morocco">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.6</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Africa</span>
+                        <h3>Marrakech, Morocco</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Get lost in bustling souks, admire intricate Moorish architecture, and relax in serene
+                            riads.</p>
+                        <p class="price">From <strong>$650</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+
+  <!-- Card 24 -->
+                <div class="destination-card" data-location="bora bora french polynesia oceania island resort">
+                    <div class="card-image">
+                        <img src="Bora.png" alt="Bora Bora">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Oceania</span>
+                        <h3>Bora Bora</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Experience ultimate luxury in overwater villas surrounded by breathtaking turquoise lagoons.
+                        </p>
+                        <p class="price">From <strong>$3,500</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+  <!-- Card 25 -->
+                <div class="destination-card" data-location="reykjavik iceland europe aurora snow nature">
+                    <div class="card-image">
+                        <img src="nat.jpg" alt="Reykjavik, Iceland">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Europe</span>
+                        <h3>Reykjavik, Iceland</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Chase the Northern Lights, soak in geothermal pools, and witness massive glaciers and
+                            waterfalls.</p>
+                        <p class="price">From <strong>$1,050</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+
+
+  <!-- Card 26 -->
+                <div class="destination-card" data-location="cairo egypt africa pyramids desert ancient">
+                    <div class="card-image">
+                        <img src="a22.png" alt="Cairo, Egypt">
+                        <div class="rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">Africa</span>
+                        <h3>Cairo, Egypt</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                            Uncover ancient mysteries, cruise the mighty Nile, and marvel at the Great Pyramids of Giza.
+                        </p>
+                        <p class="price">From <strong>$550</strong></p>
+                        <button class="book-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+<!-- Empty State (Hidden) -->
+
+            <div id="noResults" class="empty-state">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>No destinations found</h3>
+                <p>Try searching for a different location like "Japan" or "Greece".</p>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+<!-- planet ----------------------------------------------------------------------------------- -->
+<!-- Tours Section -->
+
+
+    <section id="tours" class="destinations-section" style="padding-top: 6rem;">
+        <div class="section-header">
+            <h2>GALEXY TOURS</h2>
+            <p>Out-of-this-world experiences that push the boundaries of travel.</p>
+        </div>
+        <div class="destinations-grid">
+
+
+
+<!-- universe -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planet9.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+
+
+ <!-- beyond planet -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planeta.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+ <!-- universe -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="glx.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+ <!-- big saturn -->
+
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planetg.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+
+<!-- black hole -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planet7.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+<!-- mars -->
+             <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planet6.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+
+<!-- saturn -->
+                  <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planet4.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+            
+
+<!-- colom 3rd -->
+<!-- universe black hole -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planet8.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+
+<!--universe  -->
+            <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planetb.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+<!--  black hole gravity-->
+
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planetc.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+
+<!-- big moon -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planetd.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+            
+<!-- big marss -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planete.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+
+
+<!-- vanus -->
+              <div class="destination-card" data-location="moon space lunar gateway future">
+                <div class="card-image">
+                    <img src="planetrr.jpg" alt="Lunar Gateway Tour" onerror="this.src='https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Lunar Gateway Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience ultimate luxury on the Moon. Play low-gravity golf and watch Earthrise from your private crater suite.</p>
+                    <p class="price">From <strong>$8,500,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+ 
+      
+<!-- Saturn Tour Card -->
+            <div class="destination-card" data-location="saturn space rings observation future">
+                <div class="card-image">
+                    <img src="planettt.jpg" alt="Saturn Rings Tour" onerror="this.src='https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Saturn Rings Observation</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        A multi-year luxury cruise to the outer solar system. Dine while orbiting the majestic rings of Saturn.</p>
+                    <p class="price">From <strong>$150,000,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+
+
+ <!-- Venus Tour Card -->
+            <div class="destination-card" data-location="venus space cloud city floating future">
+                <div class="card-image">
+                    <img src="venus_tour.png" alt="Venus Cloud City Tour" onerror="this.src='https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=500&auto=format&fit=crop'">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Interplanetary</span>
+                    <h3>Venus Cloud City</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Float high above the scorching surface in our state-of-the-art aerostat resort. Witness fiery sunsets in the clouds.</p>
+                    <p class="price">From <strong>$45,000,000</strong></p>
+                    <button class="book-btn">Book Mission</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------- -->
+<!-- Hotels Section -->
+
+
+    <section id="hotels" class="destinations-section" style="padding-top: 6rem;">
+        <div class="section-header">
+            <h2>Luxury Hotels</h2>
+            <p>Sourced directly from Booking.com & Airbnb API partners.</p>
+            "; "
+        </div>
+
+        <div class="destinations-grid">
+            <!-- Hotel Card 1 -->
+            <div class="destination-card" data-location="hotel booking luxury resort marina">
+                <div class="card-image">
+                    <img src="luxury_hotel.png" alt="Grand Luxury Resort">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9 (Booking.com)</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--secondary);">Accommodation</span>
+                    <h3>The Majestic Infinity Resort</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Voted #1 Luxury Hotel. Features a rooftop infinity pool, golden elevator, and panoramic skyline
+                        views.</p>
+                    <p class="price">From <strong>$1,850</strong> / night</p>
+                    <button class="book-btn">Reserve Room</button>
+                </div>
+            </div>
+
+<!-- Hotel Card 2 -->
+
+            <div class="destination-card" data-location="hotel booking burj al arab dubai luxury">
+                <div class="card-image">
+                    <img src="burj_al_arab.png" alt="Burj Al Arab">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 5.0 (Booking.com)</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--secondary);">Accommodation</span>
+                    <h3>Burj Al Arab Jumeirah</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Iconic sail-shaped 7-star hotel in Dubai featuring 24k gold ipads, private butlers, and
+                        ocean-view suites.</p>
+                    <p class="price">From <strong>$4,500</strong> / night</p>
+                    <button class="book-btn">Reserve Room</button>
+                </div>
+            </div>
+
+ <!-- Hotel Card 3 -->
+
+            <div class="destination-card" data-location="hotel booking plaza new york central park">
+                <div class="card-image">
+                    <img src="plaza_hotel.png" alt="The Plaza Hotel">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.8 (Agoda)</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--secondary);">Accommodation</span>
+                    <h3>The Plaza Hotel, NYC</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Experience timeless elegance and classic grandeur overlooking Central Park in Manhattan.</p>
+                    <p class="price">From <strong>$1,200</strong> / night</p>
+                    <button class="book-btn">Reserve Room</button>
+                </div>
+            </div>
+
+ <!-- Hotel Card 4 -->
+
+            <div class="destination-card" data-location="hotel booking ritz paris france luxury">
+                <div class="card-image">
+                    <img src="ritz_paris.png" alt="Ritz Paris">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 5.0 (Expedia)</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--secondary);">Accommodation</span>
+                    <h3>Ritz Paris</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        World-renowned French luxury and opulence favored by royalty, featuring exquisite grand suites.
+                    </p>
+                    <p class="price">From <strong>$2,800</strong> / night</p>
+                    <button class="book-btn">Reserve Room</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------ -->
+ <!-- Food Section -->
+
+
+    <section id="food" class="destinations-section" style="padding-top: 6rem;">
+        <div class="section-header">
+            <h2>Fine Dining & Culinary</h2>
+            <p>Taste the extraordinary. Michelin-starred experiences around the globe.</p>
+        </div>
+
+        <div class="destinations-grid">
+
+
+ <!-- Food Card 1 -->
+            <div class="destination-card" data-location="food dining michelin star wagyu truffle">
+                <div class="card-image">
+                    <img src="fine_dining.png" alt="Gourmet Fine Dining">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 3 Michelin Stars</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Culinary Experience</span>
+                    <h3>A5 Wagyu & Truffle</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">An
+                        extraordinary 12-course molecular gastronomy experience curated by world-class chefs.</p>
+                    <p class="price">Table Reservation <strong>$850</strong></p>
+                    <button class="book-btn">Book Table</button>
+                </div>
+            </div>
+
+<!-- Food Card 2 -->
+
+            <div class="destination-card" data-location="food dining michelin star sushi omakase tokyo">
+                <div class="card-image">
+                    <img src="omakase_sushi.png" alt="Premium Omakase Sushi">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 3 Michelin Stars</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Culinary Experience</span>
+                    <h3>Sukiyabashi Jiro Omakase</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">The
+                        ultimate sushi tasting menu featuring highest-grade Otoro, Uni, and daily fresh catches in
+                        Tokyo.</p>
+                    <p class="price">Table Reservation <strong>$400</strong></p>
+                    <button class="book-btn">Book Table</button>
+                </div>
+            </div>
+
+<!-- Food Card 3 -->
+
+            <div class="destination-card" data-location="food dining luxury beluga caviar dubai">
+                <div class="card-image">
+                    <img src="caviar_platter.png" alt="Beluga Caviar">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 5.0 Tasting Guide</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Culinary Experience</span>
+                    <h3>Al Mahara Beluga Caviar</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Indulge in premium Beluga caviar served on mother of pearl spoons inside an underwater
+                        restaurant.</p>
+                    <p class="price">Table Reservation <strong>$1,200</strong></p>
+                    <button class="book-btn">Book Table</button>
+                </div>
+            </div>
+
+<!-- Food Card 4 -->
+
+            <div class="destination-card" data-location="food dining michelin star alba truffle pasta italy">
+                <div class="card-image">
+                    <img src="truffle_pasta.png" alt="White Truffle Pasta">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 3 Michelin Stars</div>
+                </div>
+                <div class="card-content">
+                    <span class="category" style="color: var(--primary);">Culinary Experience</span>
+                    <h3>Alba White Truffle Pasta</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Handmade tagliatelle generously shaved with wild Alba white truffles at Osteria Francescana.</p>
+                    <p class="price">Table Reservation <strong>$650</strong></p>
+                    <button class="book-btn">Book Table</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!-- ---------------------------------------------------- -->
+    <!-- Universities Section -->
+
+
+    <section id="universities" class="destinations-section" style="display: none; padding-top: 6rem;">
+        <div class="section-header">
+            <h2>Top Global Universities & Colleges 🎓</h2>
+            <p>Explore the finest global academic institutions and historic colleges.</p>
+        </div>
+        <div class="destinations-grid">
+            <!-- Items generated by JS -->
+        </div>
+    </section>
+
+    <!-- Forests Section -->
+
+    <section id="forests" class="destinations-section" style="display: none; padding-top: 6rem;">
+        <div class="section-header">
+            <h2>Explore the Wild Forests 🌲</h2>
+            <p>Immerse yourself in nature's green wonders across the globe.</p>
+        </div>
+        <div class="destinations-grid">
+            <!-- Items generated by JS -->
+
+        </div>
+    </section>
+
+
+
+    <!-- Contact Us Section -->
+    <footer id="contact" class="site-footer" style="background: var(--bg-card); padding: 4rem 2rem; margin-top: 6rem; border-top: 1px solid var(--glass-border); text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-main); margin-bottom: 1rem;">Get In Touch</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem;">Ready to embark on your extraordinary journey? Reach out to us directly.</p>
+            
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+                
+                
+                <!-- Email -->
+                <a href="mailto:lostimran71@gmail.com" class="glass-panel" style="display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-radius: 16px; text-decoration: none; color: var(--text-main); min-width: 200px; transition: transform 0.3s ease;">
+                    <i class="fa-solid fa-envelope" style="font-size: 2rem; color: #EF4444; margin-bottom: 0.8rem;"></i>
+                    <span style="font-weight: 600; margin-bottom: 0.3rem;">Email Us</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">lostimran71@gmail.com</span>
+                </a>
+                
+
+                <!-- Phone -->
+                <a href="tel:8340249563" class="glass-panel" style="display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-radius: 16px; text-decoration: none; color: var(--text-main); min-width: 200px; transition: transform 0.3s ease;">
+                    <i class="fa-solid fa-phone" style="font-size: 2rem; color: #10B981; margin-bottom: 0.8rem;"></i>
+                    <span style="font-weight: 600; margin-bottom: 0.3rem;">Call Us</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">+91 8340249563</span>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/eimran_09" target="_blank" class="glass-panel" style="display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-radius: 16px; text-decoration: none; color: var(--text-main); min-width: 200px; transition: transform 0.3s ease;">
+                    <i class="fa-brands fa-instagram" style="font-size: 2rem; color: #E1306C; margin-bottom: 0.8rem;"></i>
+                    <span style="font-weight: 600; margin-bottom: 0.3rem;">Instagram</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">@eimran_09</span>
+                </a>
+            </div>
+            
+            <div style="margin-top: 4rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--glass-border); padding-top: 2rem;">
+                &copy; 2026 Natura Travel. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Floating Logout Button -->
+    <a href="login.html" class="floating-logout-btn" title="Login/Logout"
+        style="position: fixed; bottom: 25px; right: 10px; z-index: 9999; width: 45px; height: 45px; border-radius: 50%; background-color: #EF4444; color: white; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; box-shadow: 0 8px 30px rgba(239, 68, 68, 0.4); text-decoration: none; border: 2px solid rgba(255, 255, 255, 0.4); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+    </a>
+
+    <!-- Floating Map Button (Earth Logo) -->
+    <button id="openMapBtn" class="floating-map-btn" title="View Map"
+        style="position: fixed; bottom: 25px; left: 25px; z-index: 9999; width: 45px; height: 45px; border-radius: 50%; background-color: #3B82F6; color: white; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4); text-decoration: none; border: 2px solid rgba(255, 255, 255, 0.4); cursor: pointer; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <i class="fa-solid fa-earth-americas"></i>
+    </button>
+
+    <!-- Floating Universe Button -->
+    <button id="openUniverseBtn" class="floating-map-btn" title="View Universe"
+        style="position: fixed; bottom: 25px; left: 80px; z-index: 9999; width: 45px; height: 45px; border-radius: 50%; background-color: #8B5CF6; color: white; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4); text-decoration: none; border: 2px solid rgba(255, 255, 255, 0.4); cursor: pointer; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <i class="fa-solid fa-rocket"></i>
+    </button>
+
+    <!-- Universe Modal -->
+    <div id="universeModal" class="modal">
+        <div class="modal-content glass-panel" style="position: relative; max-width: 90vw; width: 1000px; height: 80vh; display: flex; flex-direction: column;">
+            <div class="modal-header">
+                <h2>Explore the Solar System (NASA 3D)</h2>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button id="fullscreenUniverseBtn" class="icon-btn" title="Full Screen" style="width: 30px; height: 30px; font-size: 0.9rem;"><i class="fa-solid fa-expand"></i></button>
+                    <button id="closeUniverseBtn" class="icon-btn" style="width: 30px; height: 30px; font-size: 0.9rem;"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="modal-body" style="padding: 0; flex: 1; display: flex; flex-direction: column; background: #000;">
+                <iframe id="nasaUniverseIframe" src="https://eyes.nasa.gov/apps/solar-system/" width="100%"
+                    height="100%" style="border:0; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; flex: 1;"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Modal -->
+    <div id="mapModal" class="modal">
+        <div class="modal-content glass-panel" style="position: relative; max-width: 800px; width: 90%;">
+            <div class="modal-header">
+                <h2>Explore the World</h2>
+                <button id="closeMapBtn" class="icon-btn" style="width: 30px; height: 30px; font-size: 0.9rem;"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" style="padding: 0; display: flex; flex-direction: column;">
+                <div style="padding: 1rem; display: flex; gap: 1rem; background: var(--bg-card); flex-wrap: wrap;">
+                    <form id="mapSearchForm" style="flex: 1; display: flex; gap: 0.5rem; min-width: 250px;">
+                        <input type="text" id="mapSearchInput" placeholder="Search a location..."
+                            style="flex: 1; padding: 0.8rem; border-radius: 8px; border: 1px solid #e2e8f0; outline: none; font-family: var(--font-body);">
+                        <button type="submit" class="primary-btn"
+                            style="padding: 0 1.5rem; border-radius: 8px; border: none; cursor: pointer;"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <iframe id="googleMapIframe" src="https://www.google.com/maps?q=World&output=embed" width="100%"
+                    height="450" style="border:0; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Profile Edit Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content glass-panel" style="position: relative;">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <button id="closeProfileBtn" class="icon-btn" style="width: 30px; height: 30px; font-size: 0.9rem;"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="profileModalBody">
+                <form id="profileForm">
+                    <div
+                        style="text-align: center; margin-bottom: 2rem; position: relative; display: inline-block; width: 100%;">
+                        <div style="position: relative; display: inline-block; cursor: pointer;"
+                            onclick="document.getElementById('avatarUpload').click()" title="Change Profile Picture">
+                            <img src="https://ui-avatars.com/api/?name=Imran+King&background=F59E0B&color=fff&size=80"
+                                alt="Avatar"
+                                style="border-radius: 50%; border: 3px solid rgba(245, 158, 11, 0.5); box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 0.5rem; transition: var(--transition);">
+                            <!-- Camera Icon overlay -->
+                            <div
+                                style="position: absolute; bottom: 8px; right: -5px; background: var(--secondary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border: 2px solid var(--bg-card); transition: all 0.2s ease;">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </div>
+                        <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                        <h3 style="color: var(--text-main); font-size: 1.2rem; margin-top: 0.2rem;">Imran King</h3>
+                        <p style="color: var(--primary); font-size: 0.9rem;">@imranking</p>
+                    </div>
+
+                    <div class="form-group" style="position: relative;">
+                        <label
+                            style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; display: block;">Full
+                            Name</label>
+                        <i class="fa-solid fa-user-pen"
+                            style="position: absolute; left: 1rem; top: 2.8rem; color: var(--primary);"></i>
+                        <input type="text" placeholder="Imran King" value="Imran King"
+                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(31, 41, 55, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-main); font-family: var(--font-body); outline: none;">
+                    </div>
+                    <div class="form-group" style="position: relative; margin-top: 1rem;">
+                        <label
+                            style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; display: block;">Username</label>
+                        <i class="fa-solid fa-at"
+                            style="position: absolute; left: 1rem; top: 2.8rem; color: var(--primary);"></i>
+                        <input type="text" placeholder="imranking" value="imranking"
+                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(31, 41, 55, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-main); font-family: var(--font-body); outline: none;">
+                    </div>
+                    <div class="form-group" style="position: relative; margin-top: 1rem;">
+                        <label
+                            style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; display: block;">Email
+                            Address</label>
+                        <i class="fa-solid fa-envelope"
+                            style="position: absolute; left: 1rem; top: 2.8rem; color: var(--primary);"></i>
+                        <input type="email" placeholder="imran@example.com" value="imran@example.com"
+                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(31, 41, 55, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-main); font-family: var(--font-body); outline: none;">
+                    </div>
+                    <div class="form-group" style="position: relative; margin-top: 1rem;">
+                        <label
+                            style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; display: block;">Base
+                            Currency</label>
+                        <i class="fa-solid fa-money-bill-transfer"
+                            style="position: absolute; left: 1rem; top: 2.8rem; color: var(--primary); z-index: 10;"></i>
+                        <select
+                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(31, 41, 55, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--text-main); font-family: var(--font-body); outline: none; appearance: none;">
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="INR">INR (₹)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="primary-btn"
+                        style="width: 100%; margin-top: 1.5rem; padding: 1rem; border-radius: 30px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <i class="fa-solid fa-floppy-disk"></i> Save Profile Details
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success Animation State (Hidden by Default) -->
+            <div id="profileSuccessState" style="display: none; padding: 3rem 1rem; text-align: center;">
+                <div class="success-checkmark">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.8rem; margin-top: 1.5rem; color: var(--text-main);">
+                    Profile Updated!</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Your account details have been successfully
+                    saved.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content glass-panel" style="text-align: center; position: relative;">
+            <div class="modal-header">
+                <h2>Complete Your Payment</h2>
+                <button id="closePaymentBtn" class="icon-btn" style="width: 30px; height: 30px; font-size: 0.9rem;"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="paymentModalBody">
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">Paying for: <strong id="paymentItemName"
+                        style="color: var(--text-main);">Destination</strong></p>
+                <div class="qr-container"
+                    style="margin: 0 auto 1.5rem auto; width: 250px; height: 250px; padding: 10px; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <img src="qr_code.jpg" alt="Payment QR Code"
+                        style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label style="text-align: left; display: block; margin-bottom: 0.5rem;">Enter UTR Number (12
+                            Digits)</label>
+                        <input type="text" id="utrInput" placeholder="e.g. 123456789012" required pattern="\d{12}">
+                    </div>
+                    <button type="submit" class="primary-btn"
+                        style="width: 100%; background-color: var(--secondary); margin-top: 0.5rem;">Submit Payment
+                        Info</button>
+                </form>
+            </div>
+
+            <!-- Success Animation State (Hidden by Default) -->
+            <div id="paymentSuccessState" style="display: none; padding: 3rem 1rem;">
+                <div class="success-checkmark">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.8rem; margin-top: 1.5rem; color: var(--text-main);">
+                    Payment Successful!</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Your UTR <strong id="displayUtr"></strong> has
+                    been captured.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>
